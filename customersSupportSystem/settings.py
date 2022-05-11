@@ -15,7 +15,7 @@ DEFAULT_USER_SETTINGS = {
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-52e2@f3!p=u4e6&q67t(lav(#smljq+k5rl-13s4_a5&$76ps2'
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['support.mdesk.lt', 'https://suppaccountstorage.blob.core.windows.net']
