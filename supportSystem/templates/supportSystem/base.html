@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load load_helpdesk_settings %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="lt">
+
+<head title="">
+
+    {% include 'supportSystem/base-head.html' %}
+    {% block helpdesk_head %}{% endblock %}
+    {% include 'supportSystem/base_js.html' %}
+
+</head>
+
+<body id="bg-dark">
+
+    {% include "supportSystem/navigation-header.html" %}
+
+    <div id="wrapper">
+        {% include "supportSystem/navigation-sidebar.html" %}
+
+        <div id="content-wrapper">
+        
+            <div class="container-fluid">
+
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    {% block helpdesk_breadcrumb %}{% endblock %}
+                </ol>
+            
+                {% block helpdesk_body %}{% endblock %}
+            
+            </div>
+            <!-- /.container-fluid -->
+        
+            {% include "supportSystem/attribution.html" %}
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    {% block helpdesk_js %}{% endblock %}
+
+</body>
+
+</html>
+

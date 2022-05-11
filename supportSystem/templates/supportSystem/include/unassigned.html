@@ -1,0 +1,42 @@
+{% load i18n humanize %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        {% trans "Unassigned tickets" %}
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm table-striped" id="dataTable" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+                      <th>{% trans "Ticket" %}</th>
+                      <th>{% trans "Priority" %}</th>
+                      <th>{% trans "Queue" %}</th>
+                      <th>{% trans "Created" %}</th>
+                      <th>{% trans "Actions" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for ticket in unassigned_tickets %}
+                    <tr class="{{ ticket.get_priority_css_class }}">
+                        <td >{{ ticket.title }} </td>
+                        <td>{{ ticket.priority }}</td>
+                        <td>{{ ticket.queue }}</td>
+                        <td><span title='{{ ticket.created|date:"DATETIME_FORMAT" }}'>{{ ticket.created|naturaltime }}</span></td>
+                        <td >
+                          <a class="btn btn-sm btn-info" href="{{ ticket.get_absolute_url }}" >View</a>
+                          <a href='{{ ticket.get_absolute_url }}?take'><button class='btn btn-primary btn-sm'><i class="fas fa-hand-paper"></i>&nbsp;{% trans "Take" %}</button></a>
+                          <a href='{% url 'supportSystem:delete' ticket.id %}?next=dashboard'><button class='btn btn-danger btn-sm'><i class="fas fa-trash"></i>&nbsp;{% trans "Delete" %}</button></a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan='6'>{% trans "No unassigned tickets" %}</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Listing {{ unassigned_tickets|length }} ticket(s).</div>
+</div>
+

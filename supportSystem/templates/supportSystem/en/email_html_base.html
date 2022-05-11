@@ -1,0 +1,8 @@
+<h1 style='font-family: "Trebuchet MS", Arial, sans-serif; font-size: 14pt; color: #6593C0'>{% block header %}MDESK{% endblock %}</h1>
+
+{% block content %}{% endblock %}
+
+<p style='font-family: "Trebuchet MS", Arial, sans-serif; font-size: 11pt;'>Regards,</p>
+
+<p style='font-family: "Trebuchet MS", Arial, sans-serif; font-size: 11pt;'><b>{{ queue.title }}</b>{% if queue.email_address %}<br><a href='mailto:{{ queue.email_address }}'>{{ queue.email_address }}</a>{% endif %}</p>
+    

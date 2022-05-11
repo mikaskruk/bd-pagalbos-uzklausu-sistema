@@ -1,0 +1,249 @@
+{% extends "supportSystem/base.html" %}
+{% load i18n bootstrap4form humanize %}
+{% load static %}
+
+
+
+{% block helpdesk_title %}{{ ticket.queue.slug }}-{{ ticket.id }} : {% trans "View ticket information" %}{% endblock %}
+
+{% block helpdesk_head %}
+{% endblock %}
+
+{% block h1_title %}{{ ticket.ticket_for_url }}{% endblock %}
+
+{% block helpdesk_breadcrumb %}
+<li class="breadcrumb-item">
+    <a href="{% url 'supportSystem:list' %}">{% trans "Tickets" %}</a>
+</li>
+<li class="breadcrumb-item active">
+    {{ ticket.queue.slug }}-{{ ticket.id }}
+</li>
+{% endblock %}
+
+{% block helpdesk_body %}
+    {% if helpdesk_settings.HELPDESK_TRANSLATE_TICKET_COMMENTS %}
+        <div id="google_translate_element"></div>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    {% endif %}
+
+    {% include "supportSystem/ticket_desc_table.html" %}
+
+    {% if ticket.merged_to %}
+        <div class="card card-body bg-light">
+            <h3 class="text-center">
+                {% trans "This ticket was merged to other ticket" %}
+                <a href="{{ ticket.merged_to.get_absolute_url }}">{{ ticket.merged_to }}</a>
+            </h3>
+        </div>
+    {% else %}
+        {% if ticket.followup_set.all %}
+        {% load ticket_to_link %}
+            <div class="card mb-3">
+                <div class="card-header"><i class="fas fa-clock fa-fw fa-lg"></i>&nbsp;{% trans "Follow-ups" %}</div>
+                <div class="card-body">
+                    <div class="list-group">
+                    {% for followup in ticket.followup_set.all %}
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{ followup.title|num_to_link }}</h5>
+                                <small><i class="fas fa-clock"></i>&nbsp;<span class='byline text-info'>{% if followup.user %}by {{ followup.user }},{% endif %} <span title='{{ followup.date|date:"DATETIME_FORMAT" }}'>{{ followup.date|naturaltime }}</span> {% if not followup.public %} <span class='private'>({% trans "Private" %})</span>{% endif %}</span></small>
+                            </div>
+                            <p class="mb-1">
+                                {% if followup.comment %}
+                                    <p>{{ followup.get_markdown|urlizetrunc:50|num_to_link }}</p>
+                                {% endif %}
+                                {% for change in followup.ticketchange_set.all %}
+                                    {% if forloop.first %}<div class='changes'><ul>{% endif %}
+                                    <li>{% blocktrans with change.field as field and change.old_value as old_value and change.new_value as new_value %}Changed {{ field }} from {{ old_value }} to {{ new_value }}.{% endblocktrans %}</li>
+                                    {% if forloop.last %}</ul></div>{% endif %}
+                                {% endfor %}
+                                {% for attachment in followup.followupattachment_set.all %}{% if forloop.first %}{% trans "Attachments" %}:<div class='attachments'><ul>{% endif %}
+                                    <li><a href='{{ attachment.file.url }}'>{{ attachment.filename }}</a> ({{ attachment.mime_type }}, {{ attachment.size|filesizeformat }})
+                                    {% if followup.user and request.user == followup.user %}
+                                    <a href='{% url 'supportSystem:attachment_del' ticket.id attachment.id %}'><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                                    {% endif %}
+                                    </li>
+                                    {% if forloop.last %}</ul></div>{% endif %}
+                                {% endfor %}
+
+                            {% with possible=helpdesk_settings.HELPDESK_SHOW_EDIT_BUTTON_FOLLOW_UP %}
+                                {% if  possible and followup.user and request.user == followup.user and not followup.ticketchange_set.all or  possible and user.is_superuser and helpdesk_settings.HELPDESK_SHOW_DELETE_BUTTON_SUPERUSER_FOLLOW_UP %}
+                                <small>
+                                    {% if helpdesk_settings.HELPDESK_SHOW_EDIT_BUTTON_FOLLOW_UP %}
+                                        {% if followup.user and request.user == followup.user and not followup.ticketchange_set.all %}
+                                        <a href="{% url 'supportSystem:followup_edit' ticket.id followup.id %}" class='followup-edit'><button type="button" class="btn btn-warning btn-sm float-right"><i class="fas fa-edit"></i></button></a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if user.is_superuser and helpdesk_settings.HELPDESK_SHOW_DELETE_BUTTON_SUPERUSER_FOLLOW_UP %}
+                                        <a href="{% url 'supportSystem:followup_delete' ticket.id followup.id %}" class='followup-edit'><button type="button" class="btn btn-warning btn-sm float-right"><i class="fas fa-trash"></i></button></a>
+                                    {% endif %}
+                                </small>
+                            {% endif %}{% endwith %}
+                        </div>
+                        <!-- /.list-group-item -->
+                    {% endfor %}
+                    </div>
+                    <!-- /.list-group -->
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+        {% endif %}
+
+        <div class="card mb-3">
+            <div class="card-header">{% trans "Respond to this ticket" %}</div>
+            <div class="card-body">
+
+        <form method='post' action='update/' enctype='multipart/form-data'>
+
+        <fieldset>
+            <dl>
+
+
+                <dt><label for='commentBox'>{% trans "Comment/answer" %}</label></dt>
+                <dd><textarea rows='8' cols='70' name='comment' id='commentBox'></textarea></dd>
+
+                <dt><label>{% trans "New status" %}</label></dt>
+
+                {% if ticket.status == 1 %}
+                <dd><div class="form-group">
+                    <label for='st_open' class='active radio-inline'><input type='radio' name='new_status' value='1' id='st_open' checked='checked'>{% trans "Opened" %} &raquo;</label>
+                    <label for='st_resolved' class="radio-inline"><input type='radio' name='new_status' value='3' id='st_resolved'>{% trans "Resolved" %} &raquo;</label>
+                    <label for='st_closed' class="radio-inline"><input type='radio' name='new_status' value='4' id='st_closed'>{% trans "Closed" %} &raquo;</label>
+                </div></dd>
+                {% endif %}
+                {% if ticket.status == 2 %}
+                <dd><div class="form-group">
+                    <label for='st_reopened' class='active radio-inline'><input type='radio' name='new_status' value='2' id='st_reopened' checked='checked'>{% trans "Opened" %} &raquo;</label>
+                    <label class="radio-inline" for='st_resolved'><input type='radio' name='new_status' value='3' id='st_resolved'>{% trans "Resolved" %} &raquo;</label>
+                    <label class="radio-inline" for='st_closed'><input type='radio' name='new_status' value='4' id='st_closed'>{% trans "Closed" %} &raquo;</label>
+                </div></dd>
+                {% endif %}
+                {% if ticket.status == 3 %}
+                <dd><div class="form-group">
+                    <label for='st_reopened' class="radio-inline"><input type='radio' name='new_status' value='2' id='st_reopened'>{% trans "Opened" %} &laquo;</label>
+                    <label for='st_resolved' class='active radio-inline'><input type='radio' name='new_status' value='3' id='st_resolved' checked='checked'>{% trans "Resolved" %} &raquo;</label>
+                    <label class="radio-inline" for='st_closed'><input type='radio' name='new_status' value='4' id='st_closed'>{% trans "Closed" %}</label>
+                </div></dd>
+                {% endif %}
+                {% if ticket.status == 4 %}
+                <dd><div class="form-group"><label for='st_reopened' class="radio-inline"><input type='radio' name='new_status' value='2' id='st_reopened'>{% trans "Opened" %} &laquo;</label>
+                <label class="radio-inline" for='st_closed'><input type='radio' name='new_status' value='4' id='st_closed' checked='checked'>{% trans "Closed" %}</label></div></dd>
+                {% endif %}
+                {% if ticket.status == 5 %}
+                <dd><div class="form-group">
+                    <label class="radio-inline" for='st_reopened'><input type='radio' name='new_status' value='2' id='st_reopened'>{% trans "Opened" %} &laquo;</label>
+                </div></dd>
+                {% endif %}
+
+                {% if helpdesk_settings.HELPDESK_UPDATE_PUBLIC_DEFAULT %}
+                <input type='hidden' name='public' value='1'>
+                {% else %}
+                <dt>
+                    <label for='id_public'>{% trans "Is this answer to ticket??" %}</label> <span class='form_optional'></span>
+                </dt>
+                <dd><input type='checkbox' name='public' value='1' checked='checked' />&nbsp; {% trans 'Yes, it is answer' %}</dd>
+                <dd class='form_help_text'>{% trans "Answers are visible to customers" %}</dd>
+                {% endif %}
+
+            </dl>
+
+        <p id='ShowFurtherOptPara'><button class="btn btn-warning btn-sm" id='ShowFurtherEditOptions'>{% trans "Edit Follow-up" %}</button></p>
+
+        <div id='FurtherEditOptions' style='display: none;'>
+
+            <dl>
+
+                <dt><label for='id_title'>{% trans "Title" %}</label></dt>
+                <dd><input type='text' name='title' value='{{ ticket.title|escape }}' /></dd>
+
+                <dt><label for='id_owner'>{% trans "Owner" %}</label></dt>
+                <dd><select id='id_owner' name='owner'><option value='0'>{% trans "Delete assignment" %}</option>{% for u in active_users %}<option value='{{ u.id }}' {% if u.id == ticket.assigned_to.id %}selected{% endif %}>{{ u }}</option>{% endfor %}</select></dd>
+
+                <dt><label for='id_priority'>{% trans "Priority" %}</label></dt>
+                <dd><select id='id_priority' name='priority'>{% for p in priorities %}<option value='{{ p.0 }}'{% if p.0 == ticket.priority %} selected='selected'{% endif %}>{{ p.1 }}</option>{% endfor %}</select></dd>
+
+
+            </dl>
+
+        </div>
+
+        <p id='ShowFileUploadPara'><button class="btn btn-warning btn-sm" id='ShowFileUpload'>{% trans "Add attachments" %}</button></p>
+
+        <div id='FileUpload' style='display: none;'>
+
+            <dl>
+                <dt><label for='id_file'>{% trans "Attach file" %}</label></dt>
+                <dd>
+                    <div class="add_file_fields_wrap">
+                        <button class="add_file_field_button btn btn-success btn-xs">{% trans "Attach other file" %}</button>
+                        <div><label class='btn btn-primary btn-sm btn-file'>
+                                Browse... <input type="file" name='attachment' id='file0' style='display: none;'/>
+                        </label><span>&nbsp;</span><span id='selectedfilename0'>{% trans 'There are no files attached' %}</span></div>
+                    </div>
+                </dd>
+            </dl>
+
+        </div>
+
+        </fieldset>
+
+        <button class="btn btn-primary float-right" type='submit'>{% trans "Update ticket" %}</button>
+
+        {% csrf_token %}</form>
+
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block helpdesk_js %}
+<script type='text/javascript' language='javascript'>
+$( function() {
+	$( "#id_due_date" ).datepicker({dateFormat: 'yy-mm-dd'});
+} );
+</script>
+
+<script type='text/javascript' language='javascript'>
+$(document).ready(function() {
+    $("#ShowFurtherEditOptions").click(function() {
+        $("#FurtherEditOptions").toggle();
+        return false;
+    });
+
+    $("#ShowFileUpload").click(function() {
+        $("#FileUpload").fadeIn();
+        $("#ShowFileUploadPara").hide();
+        return false;
+    });
+
+
+
+    $("[data-toggle=tooltip]").tooltip();
+
+    $('.add_file_fields_wrap').on('fileselect', ':file', function(event, numFiles, label, browseButtonNum) {
+        $("#selectedfilename"+browseButtonNum).html(label);
+    });
+
+    var x = 0;
+    var wrapper         = $(".add_file_fields_wrap");
+
+    $(add_button).click(function(e){
+        x++;
+        e.preventDefault();
+        $(wrapper).append("<div><label class='btn btn-primary btn-sm btn-file'>Browse... <input type='file' name='attachment' id='file" + x + "' multiple style='display: none;'/></label><span>&nbsp;</span><span id='selectedfilename" + x + "'>{% trans 'No files selected.' %}</span></div>"); //add input box
+    });
+
+});
+
+$(document).on('change', ':file', function() {
+    var input = $(this),
+        inputWidgetNum = $(this).attr('id').split("file")[1],
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label, inputWidgetNum]);
+});
+</script>
+{% endblock %}

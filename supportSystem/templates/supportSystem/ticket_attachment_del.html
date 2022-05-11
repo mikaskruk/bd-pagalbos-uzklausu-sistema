@@ -1,0 +1,16 @@
+{% extends "supportSystem/base.html" %}{% load i18n %}
+
+{% block helpdesk_title %}{% trans "Delete attachment" %}{% endblock %}
+
+{% block helpdesk_body %}{% blocktrans %}
+<h2>Delete Ticket Attachment</h2>
+
+<p>Are you shure about deleting the attachment <i>{{ filename }}</i> from this ticket?</p>
+{% endblocktrans %}
+
+<p><a href='../../'><button class="btn btn-primary btn-lg">{% trans "Don't delete" %}</button></a></p>
+
+<form method='post' action='./'>
+    <button class="btn btn-danger" type='submit'>{% trans "Delete" %}&nbsp;{{ filename }}</button>
+{% csrf_token %}</form>
+{% endblock %}

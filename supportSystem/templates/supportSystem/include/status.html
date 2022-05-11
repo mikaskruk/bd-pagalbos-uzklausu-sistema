@@ -1,0 +1,45 @@
+{% load i18n %}
+{% load static %}
+<br>
+<link rel="stylesheet" type="text/css", href="{% static 'css/cards.css' %}">
+<div class="row">
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white  mb-3" id="ticket-30">
+                <div class="card-header">
+                    <a class="card-link" href="{% url 'supportSystem:list' %}?{{  basic_ticket_stats.ticket_status.0.1 }}" class="card-title" >{% trans "Opened Tickets" %}</a>
+                </div>
+                <div class="card-body" >
+                    <h3 class="card-title" >{{ basic_ticket_stats.ticket_status.0.2 }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white  mb-3" id="ticket-3060">
+                <div class="card-header">
+                    <a class="card-link" href="{% url 'supportSystem:list' %}?{{  basic_ticket_stats.ticket_status.1.1 }}">{% trans "Resolved Tickets" %}</a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ basic_ticket_stats.ticket_status.1.2 }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white  mb-3" id="ticket-60">
+                <div class="card-header">
+                     <a class="card-link" href="{% url 'supportSystem:list' %}?{{  basic_ticket_stats.ticket_status.2.1 }}">{% trans "Closed Tickets" %}</a>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ basic_ticket_stats.ticket_status.2.2 }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+{% extends "supportSystem/base.html" %}{% load i18n %}
+
+{% block helpdesk_title %}{% trans "Reports and Statistic" %}{% endblock %}
+
+{% block helpdesk_breadcrumb %}
+<li class="breadcrumb-item">
+    <a href="{% url 'supportSystem:report_index' %}">{% trans "Reports and Statistic" %}</a>
+</li>
+<li class="breadcrumb-item active">{% trans "Overview" %}</li>
+{% endblock %}
+
+{% block helpdesk_body %}
+<h2>{% trans "Reports and Statistic" %}</h2>
+
+{% if number_tickets == 0 %}
+<p>{% trans "There are no tickets registered, unable to create reports" %}</p>
+{% else %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-info-circle"></i>
+        {% trans "Statistic" %}
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <td>{% trans "Average days until ticket is closed:" %}</td>
+                        <td><strong style="color: red;">{{ basic_ticket_stats.average_nbr_days_until_ticket_closed }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>{% trans "Queue" %}</th>
+                        <th>{% trans "Opened" %}</th>
+                        <th>{% trans "Resolved" %}</th>
+                        <th>{% trans "Closed" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for queue in dash_tickets %}
+                    <tr>{% url 'supportSystem:list' as hdlist %}
+                        <td><a href='{{ hdlist }}?queue={{ queue.queue }}&status=1&status=2'>{{ queue.name }}</a></td>
+                        <td>{% if queue.open %}<a href='{{ hdlist }}?queue={{ queue.queue }}&status=1&status=2'>{% endif %}{{ queue.open }}{% if queue.open %}</a>{% endif %}</td>
+                        <td>{% if queue.resolved %}<a href='{{ hdlist }}?queue={{ queue.queue }}&status=3'>{% endif %}{{ queue.resolved }}{% if queue.resolved %}</a>{% endif %}</td>
+                        <td>{% if queue.closed %}<a href='{{ hdlist }}?queue={{ queue.queue }}&status=4'>{% endif %}{{ queue.closed }}{% if queue.closed %}</a>{% endif %}</td>
+
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan='6'>{% trans "There are no unassigned tickets" %}</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-print"></i>
+        {% trans "Generate Report" %}
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>{% trans "Users reports" %}
+                <ul>
+                    <li><a href='userpriority/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By priority" %}</a></li>
+                    <li><a href='userqueue/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By queue" %}</a></li>
+                    <li><a href='userstatus/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By status" %}</a></li>
+                    <li><a href='usermonth/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By month" %}</a></li>
+                </ul>
+            </li>
+            <li>{% trans "Queues reports" %}
+                <ul>
+                    <li><a href='queuepriority/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By priority" %}</a></li>
+                    <li><a href='queuestatus/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By status" %}</a></li>
+                    <li><a href='queuemonth/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By month" %}</a></li>
+                    <li><a href='daysuntilticketclosedbymonth/{% if saved_query %}?saved_query={{ saved_query }}{% endif %}'>{% trans "By days until ticket is closed" %}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+{% endif %}
+{% endblock %}

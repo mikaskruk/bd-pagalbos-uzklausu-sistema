@@ -1,0 +1,27 @@
+{% extends "supportSystem/base.html" %}{% load i18n %}
+
+{% block helpdesk_title %}{% trans "Delete tickets" %}{% endblock %}
+
+{% block helpdesk_breadcrumb %}
+<li class="breadcrumb-item">
+    <a href="{% url 'supportSystem:list' %}">{% trans "Tickets" %}</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="{% url 'supportSystem:list' %}{{ ticket.id }}/">{{ ticket.queue.slug }}-{{ ticket.id }}</a>
+</li>
+<li class="breadcrumb-item active">{% trans "Delete Ticket" %}</li>
+{% endblock %}
+
+{% block helpdesk_body %}
+<h2>{% trans "Delete ticket" %}</h2>
+
+<p>{% blocktrans with ticket.title as ticket_title %}Are you sure about deleting ticket? (<em>{{ ticket_title }}</em>)? All information coresponding to ticket will be deleted{% endblocktrans %}</p>
+
+<p><a href='../'><button class="btn btn-primary btn-lg">{% trans "Don't delete" %}</button></a></p>
+
+<form method='post' action='./'>
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="btn btn-danger" type='submit'>{% trans "Delete" %}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "supportSystem/base.html" %}{% load i18n %}
+{% block helpdesk_title %}{% trans "Follow-Up edit" %}{% endblock %}
+
+{% block helpdesk_head %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("[data-toggle=tooltip]").tooltip();
+    });
+</script>
+{% endblock helpdesk_head %}
+
+{% block helpdesk_breadcrumb %}
+<li class="breadcrumb-item">
+    <a href="{% url 'supportSystem:list' %}">{% trans "Tickets" %}</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="{{ ticket.get_absolute_url }}">{{ ticket.queue.slug }}-{{ ticket.id }}</a>
+</li>
+<li class="breadcrumb-item active">
+    {% trans "Edit Follow-up" %}
+</li>
+{% endblock %}
+
+{% block helpdesk_body %}
+
+{% include "supportSystem/ticket_desc_table.html" %}
+
+<div class="card mb-3">
+    <div class="card-header">
+        {% trans "Edit Follow-Up" %}
+    </div>
+    <div class="card-body">
+        <form action="." method="POST" name="edit_followup_form">
+            {{ form.non_field_errors }}
+            <fieldset>
+            <dl>
+                <dt><label for='id_ticket'>{% trans "Assign Ticket:" %}</label></dt>
+                <dd>{{ form.ticket }}</dd>
+                <dt><label for="id_title">{% trans "Title:" %}</label></dt>
+                <dd>{{ form.title }}</dd>
+                <dt><label for="id_comment">{% trans "Comment:" %}</label></dt>
+                <dd>{{ form.comment }}</dd>
+                <dt><label for="id_public">Public:</label></dt>
+                <dd>{{ form.public }}</dd>
+                    <p>Public comments are visible to customers</p>
+                <dt><label for="id_new_status">New status:</label></dt>
+                <dd>{{ form.new_status }}</dd>
+                    <p>If status was changed, what was ut??</p>
+            </dl>
+            </fieldset>
+            <p><input class="btn btn-primary btn-sm" type="submit" value="Submit"></p>{% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock helpdesk_body %}

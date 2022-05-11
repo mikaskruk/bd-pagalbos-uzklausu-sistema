@@ -1,0 +1,29 @@
+{% load i18n helpdesk_staff %}
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+    {% if helpdesk_settings.HELPDESK_NAVIGATION_ENABLED and user.is_authenticated or user|is_helpdesk_staff %}
+        <li class="nav-item{% if 'dashboard' in request.path %} active{% endif %}">
+          <a class="nav-link" href="{% url 'supportSystem:dashboard' %}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>{% trans "Dashboard" %}</span>
+          </a>
+        </li>
+        <li class="nav-item{% if 'tickets' in request.path and 'submit' not in request.path %} active{% endif %}">
+          <a class="nav-link" href="{% url 'supportSystem:list' %}">
+            <i class="fas fa-fw fa-tasks"></i>
+            <span>{% trans "All tickets" %}</span>
+          </a>
+        </li>
+
+        <li class="nav-item{% if 'submit' in request.path %} active{% endif %}">
+
+        </li>
+        <li class="nav-item{% if 'reports' in request.path %} active{% endif %}">
+          <a class="nav-link" href="{% url 'supportSystem:report_index' %}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>{% trans "Reports" %}</span>
+          </a>
+        </li>
+{% endif %}
+    </ul>

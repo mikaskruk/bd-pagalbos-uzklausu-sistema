@@ -1,0 +1,90 @@
+{% load i18n humanize  %}
+{% load static %}
+{% load helpdesk_util %}
+
+<div class="card mb-3">
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-sm table-border">
+                <thead class="thead-light">
+                    <tr class=''><th colspan='4'><h3>{{ ticket.title }} [{{ ticket.get_status }}]</h3>
+                            {% blocktrans with ticket.queue as queue %}Queue: {{ queue }}{% endblocktrans %}
+                            <span class='ticket_toolbar float-right'>
+
+
+                    </span></th></tr>
+                </thead>
+                <tbody>
+                    {% for customfield in ticket.ticketcustomfieldvalue_set.all %}
+                    <tr>
+                        <th class="table-secondary">{{ customfield.field.label }}</th>
+                        <td>{% spaceless %}{% if "url" == customfield.field.data_type %}<a href='{{ customfield.value }}'>{{ customfield.value }}</a>
+                            {% elif "datetime" == customfield.field.data_type %}{{ customfield.value|datetime_string_format }}
+                            {% elif "date" == customfield.field.data_type %}{{ customfield.value|datetime_string_format }}
+                            {% elif "time" == customfield.field.data_type %}{{ customfield.value|datetime_string_format }}
+                            {% else %}{{ customfield.value|default:"" }}
+                            {% endif %}{% endspaceless %}</td>
+                    </tr>{% endfor %}
+                    <tr>
+                        <th class="table-active">{% trans "Registered" %}</th>
+                        <td>{{ ticket.created|date:"DATETIME_FORMAT" }} ({{ ticket.created|naturaltime }})</td>
+                    </tr>
+                    <tr>
+                        <th class="table-active">{% trans "Assigned" %}</th>
+                        <td>{{ ticket.get_assigned_to }}{% if _('Unassigned') == ticket.get_assigned_to  %} <strong>
+                                <a data-toggle="tooltip" href='?take' title='{% trans "Assign ticket" %}{{ request.user.email }}'><button type="button" class="btn btn-primary btn-sm float-right"><i class="fas fa-hand-paper"></i></button></a>
+                        </strong>{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                     <th class="table-active">{% trans "Submitted" %}</th>
+                        <td> {{ ticket.submitter_email }}
+                                                         {% if user.is_superuser %} {% if submitter_userprofile_url %}<strong></strong>{% endif %}
+                            <strong><a data-toggle="tooltip" href ="{% url 'supportSystem:list'%}?q={{ticket.submitter_email}}" title='{% trans "Search tickets registered by: " %}{{ ticket.submitter_email }}'>
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-search"></i></button></a></strong>
+                                                         {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="table-active">{% trans "Priority" %}</th>
+                        <td class="{% if ticket.priority < 3 %}table-warning{% endif %}">{{ ticket.get_priority_display }}</td>
+                    </tr>
+                    <tr>
+                        <th class="table-active">{% trans "Attachments" %}</th>
+                        <td colspan="3">
+                            <ul>
+                            {% for followup in ticket.followup_set.all %}
+                            {% for attachment in followup.followupattachment_set.all %}
+                            <li><a href='{{ attachment.file.url }}'>{{ attachment.filename }}</a> ({{ attachment.mime_type }}, {{ attachment.size|filesizeformat }})
+                            {% if followup.user and request.user == followup.user %}
+                            <a href='{% url 'supportSystem:attachment_del' ticket.id attachment.id %}'><button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></a>
+                            {% endif %}
+                            </li>
+                            {% endfor %}
+                            {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="ticket-description" colspan='4'>
+                            <h4>{% trans "Description" %}</h4>
+                            {{ ticket.get_markdown|urlizetrunc:50|num_to_link }}</td>
+                    </tr>
+
+                    {% if ticket.resolution %}<tr>
+                        <th colspan='2'>{% trans "Resolution" %}{% if "Resolved" == ticket.get_status_display %} <a href='?close'><button type="button" class="btn btn-warning btn-sm">{% trans "Take and close" %}</button></a>{% endif %}</th>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>{{ ticket.get_resolution_markdown|urlizetrunc:50|linebreaksbr }}</td>
+                    </tr>{% endif %}
+                </tbody>
+            </table>
+
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+

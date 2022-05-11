@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Login Page</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+
+<style>
+
+.imgcontainer {
+  text-align: center;
+  margin: 48px 0 24px 0;
+}
+
+img.avatar {
+  width: 25%;
+  height: 25%;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.card-footer {
+  padding: 16px;
+}
+</style>
+
+<body>
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-sm-center h-100">
+				<div class="col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-9">
+					<div class="imgcontainer">
+						<img src="{% static "images/mdesk.png" %}" alt="Avatar" class="avatar">
+					</div>
+					<div class="card shadow-lg">
+
+						<div class="card-footer py-3 border-0">
+							<div class="text-center">
+								<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                                   {% csrf_token %}
+
+								<div class="align-items-center">
+
+                                    <button type="submit" class="btn btn-outline-dark">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">
+                                    <path d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/>
+                                    </svg>
+										Prisijunkite su Microsoft365
+									</button>
+
+								</div>
+							</form>
+							</div>
+						</div>
+
+					</div>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>

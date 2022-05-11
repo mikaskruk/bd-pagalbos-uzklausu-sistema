@@ -1,0 +1,1816 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-08 17:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\customersSupportSystem\settings.py:297
+msgid "Lithuanian"
+msgstr ""
+
+#: .\customersSupportSystem\settings.py:298
+msgid "English"
+msgstr ""
+
+#: .\supportSystem\admin.py:30 .\supportSystem\models.py:415
+msgid "Submitter E-Mail"
+msgstr ""
+
+#: .\supportSystem\admin.py:55 .\supportSystem\models.py:80
+#: .\supportSystem\models.py:1081
+msgid "Slug"
+msgstr ""
+
+#: .\supportSystem\forms.py:108
+msgid "This ticket is merged into the selected ticket."
+msgstr ""
+
+#: .\supportSystem\forms.py:182 .\supportSystem\models.py:287
+#: .\supportSystem\models.py:399
+#: .\supportSystem\templates\supportSystem\include\tickets.html:16
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:15
+#: .\supportSystem\templates\supportSystem\report_index.html:40
+#: .\supportSystem\templates\supportSystem\ticket_list.html:44
+#: .\supportSystem\views\staff.py:1184 .\supportSystem\views\staff.py:1190
+#: .\supportSystem\views\staff.py:1196 .\supportSystem\views\staff.py:1202
+msgid "Queue"
+msgstr ""
+
+#: .\supportSystem\forms.py:191
+msgid "Summary of the problem"
+msgstr ""
+
+#: .\supportSystem\forms.py:196
+msgid "Description of your issue"
+msgstr ""
+
+#: .\supportSystem\forms.py:198
+msgid "Please be as descriptive as possible and include all details"
+msgstr ""
+
+#: .\supportSystem\forms.py:206
+#: .\supportSystem\management\commands\escalate_tickets.py:123
+#: .\supportSystem\models.py:453
+#: .\supportSystem\templates\supportSystem\include\tickets.html:15
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:14
+#: .\supportSystem\templates\supportSystem\ticket.html:164
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:50
+#: .\supportSystem\templates\supportSystem\ticket_list.html:43
+#: .\supportSystem\views\staff.py:540
+msgid "Priority"
+msgstr ""
+
+#: .\supportSystem\forms.py:207
+msgid "Please select a priority carefully. If unsure, leave it as '3'."
+msgstr ""
+
+#: .\supportSystem\forms.py:214 .\supportSystem\models.py:461
+msgid "Due on"
+msgstr ""
+
+#: .\supportSystem\forms.py:220
+msgid "Attach File"
+msgstr ""
+
+#: .\supportSystem\forms.py:221
+msgid ""
+"You can attach a file to this ticket. Only file types such as plain text (."
+"txt), a document (.pdf, .docx, or .odt), or screenshot (.png or .jpg) may be "
+"uploaded."
+msgstr ""
+
+#: .\supportSystem\forms.py:320
+msgid "Submitter E-Mail Address"
+msgstr ""
+
+#: .\supportSystem\forms.py:322
+msgid ""
+"This e-mail address will receive copies of all public updates to this ticket."
+msgstr ""
+
+#: .\supportSystem\forms.py:332
+msgid "Case owner"
+msgstr ""
+
+#: .\supportSystem\forms.py:333
+msgid ""
+"If you select an owner other than yourself, they'll be e-mailed details of "
+"this ticket immediately."
+msgstr ""
+
+#: .\supportSystem\forms.py:372
+#, python-format
+msgid "Ticket Opened & Assigned to %(name)s"
+msgstr ""
+
+#: .\supportSystem\forms.py:373
+msgid "<invalid user>"
+msgstr ""
+
+#: .\supportSystem\forms.py:376
+msgid "Ticket Opened"
+msgstr ""
+
+#: .\supportSystem\forms.py:395
+msgid "Your E-Mail Address"
+msgstr ""
+
+#: .\supportSystem\forms.py:396
+msgid "We will e-mail you when your ticket is updated."
+msgstr ""
+
+#: .\supportSystem\forms.py:463
+msgid "Ticket Opened Via Web"
+msgstr ""
+
+#: .\supportSystem\forms.py:519
+msgid "Tickets to merge"
+msgstr ""
+
+#: .\supportSystem\forms.py:527
+msgid "Please choose at least 2 tickets."
+msgstr ""
+
+#: .\supportSystem\forms.py:529
+msgid "Impossible to merge more than 4 tickets..."
+msgstr ""
+
+#: .\supportSystem\forms.py:532
+msgid "All selected tickets must share the same queue in order to be merged."
+msgstr ""
+
+#: .\supportSystem\mail.py:310
+#, python-format
+msgid "E-Mail Received from %(sender_email)s"
+msgstr ""
+
+#: .\supportSystem\mail.py:319
+#, python-format
+msgid "Ticket Re-Opened by E-Mail Received from %(sender_email)s"
+msgstr ""
+
+#: .\supportSystem\mail.py:389
+msgid "Comment from e-mail"
+msgstr ""
+
+#: .\supportSystem\mail.py:395
+msgid "Unknown Sender"
+msgstr ""
+
+#: .\supportSystem\management\commands\create_queue_permissions.py:69
+#: .\supportSystem\models.py:343
+msgid "Permission for queue: "
+msgstr ""
+
+#: .\supportSystem\management\commands\create_usersettings.py:23
+msgid ""
+"Check for user without django-helpdesk UserSettings and create settings if "
+"required. Uses settings.DEFAULT_USER_SETTINGS which can be overridden to "
+"suit your situation."
+msgstr ""
+
+#: .\supportSystem\management\commands\escalate_tickets.py:117
+#, python-format
+msgid "Ticket escalated after %s days"
+msgstr ""
+
+#: .\supportSystem\models.py:75 .\supportSystem\models.py:392
+#: .\supportSystem\models.py:670
+#: .\supportSystem\templates\supportSystem\ticket.html:158
+#: .\supportSystem\views\staff.py:512
+msgid "Title"
+msgstr ""
+
+#: .\supportSystem\models.py:83
+msgid ""
+"This slug is used when building ticket ID's. Once set, try not to change it "
+"or e-mailing may get messy."
+msgstr ""
+
+#: .\supportSystem\models.py:88 .\supportSystem\models.py:993
+#: .\supportSystem\models.py:1078
+msgid "E-Mail Address"
+msgstr ""
+
+#: .\supportSystem\models.py:91
+msgid ""
+"All outgoing e-mails for this queue will use this e-mail address. If you use "
+"IMAP or POP3, this should be the e-mail address for that mailbox."
+msgstr ""
+
+#: .\supportSystem\models.py:97 .\supportSystem\models.py:923
+msgid "Locale"
+msgstr ""
+
+#: .\supportSystem\models.py:101
+msgid ""
+"Locale of this queue. All correspondence in this queue will be in this "
+"language."
+msgstr ""
+
+#: .\supportSystem\models.py:106
+msgid "Allow Public Submission?"
+msgstr ""
+
+#: .\supportSystem\models.py:109
+msgid "Should this queue be listed on the public submission form?"
+msgstr ""
+
+#: .\supportSystem\models.py:115
+msgid "Allow E-Mail Submission?"
+msgstr ""
+
+#: .\supportSystem\models.py:118
+msgid "Do you want to poll the e-mail box below for new tickets?"
+msgstr ""
+
+#: .\supportSystem\models.py:125
+msgid "New Ticket CC Address"
+msgstr ""
+
+#: .\supportSystem\models.py:129
+msgid ""
+"If an e-mail address is entered here, then it will receive notification of "
+"all new tickets created for this queue. Enter a comma between multiple e-"
+"mail addresses."
+msgstr ""
+
+#: .\supportSystem\models.py:135
+msgid "Updated Ticket CC Address"
+msgstr ""
+
+#: .\supportSystem\models.py:139
+msgid ""
+"If an e-mail address is entered here, then it will receive notification of "
+"all activity (new tickets, closed tickets, updates, reassignments, etc) for "
+"this queue. Separate multiple addresses with a comma."
+msgstr ""
+
+#: .\supportSystem\models.py:146
+msgid "Notify contacts when email updates arrive"
+msgstr ""
+
+#: .\supportSystem\models.py:149
+msgid ""
+"When an email arrives to either create a ticket or to interact with an "
+"existing discussion. Should email notifications be sent ? Note: the "
+"new_ticket_cc and updated_ticket_cc work independently of this feature"
+msgstr ""
+
+#: .\supportSystem\models.py:155
+msgid "E-Mail Box Type"
+msgstr ""
+
+#: .\supportSystem\models.py:157
+msgid "POP 3"
+msgstr ""
+
+#: .\supportSystem\models.py:157
+msgid "IMAP"
+msgstr ""
+
+#: .\supportSystem\models.py:157
+msgid "Local Directory"
+msgstr ""
+
+#: .\supportSystem\models.py:160
+msgid ""
+"E-Mail server type for creating tickets automatically from a mailbox - both "
+"POP3 and IMAP are supported, as well as reading from a local directory."
+msgstr ""
+
+#: .\supportSystem\models.py:166
+msgid "E-Mail Hostname"
+msgstr ""
+
+#: .\supportSystem\models.py:170
+msgid ""
+"Your e-mail server address - either the domain name or IP address. May be "
+"\"localhost\"."
+msgstr ""
+
+#: .\supportSystem\models.py:175
+msgid "E-Mail Port"
+msgstr ""
+
+#: .\supportSystem\models.py:178
+msgid ""
+"Port number to use for accessing e-mail. Default for POP3 is \"110\", and "
+"for IMAP is \"143\". This may differ on some servers. Leave it blank to use "
+"the defaults."
+msgstr ""
+
+#: .\supportSystem\models.py:184
+msgid "Use SSL for E-Mail?"
+msgstr ""
+
+#: .\supportSystem\models.py:187
+msgid ""
+"Whether to use SSL for IMAP or POP3 - the default ports when using SSL are "
+"993 for IMAP and 995 for POP3."
+msgstr ""
+
+#: .\supportSystem\models.py:192
+msgid "E-Mail Username"
+msgstr ""
+
+#: .\supportSystem\models.py:196
+msgid "Username for accessing this mailbox."
+msgstr ""
+
+#: .\supportSystem\models.py:200
+msgid "E-Mail Password"
+msgstr ""
+
+#: .\supportSystem\models.py:204
+msgid "Password for the above username"
+msgstr ""
+
+#: .\supportSystem\models.py:208
+msgid "IMAP Folder"
+msgstr ""
+
+#: .\supportSystem\models.py:212
+msgid ""
+"If using IMAP, what folder do you wish to fetch messages from? This allows "
+"you to use one IMAP account for multiple queues, by filtering messages on "
+"your IMAP server into separate folders. Default: INBOX."
+msgstr ""
+
+#: .\supportSystem\models.py:220
+msgid "Django auth permission name"
+msgstr ""
+
+#: .\supportSystem\models.py:225
+msgid "Name used in the django.contrib.auth permission system"
+msgstr ""
+
+#: .\supportSystem\models.py:229
+msgid "E-Mail Check Interval"
+msgstr ""
+
+#: .\supportSystem\models.py:230
+msgid "How often do you wish to check this mailbox? (in Minutes)"
+msgstr ""
+
+#: .\supportSystem\models.py:245
+msgid "Logging Type"
+msgstr ""
+
+#: .\supportSystem\models.py:248
+#: .\supportSystem\templates\supportSystem\ticket_list.html:61
+msgid "None"
+msgstr ""
+
+#: .\supportSystem\models.py:249
+msgid "Debug"
+msgstr ""
+
+#: .\supportSystem\models.py:250
+msgid "Information"
+msgstr ""
+
+#: .\supportSystem\models.py:251
+msgid "Warning"
+msgstr ""
+
+#: .\supportSystem\models.py:252
+msgid "Error"
+msgstr ""
+
+#: .\supportSystem\models.py:253
+msgid "Critical"
+msgstr ""
+
+#: .\supportSystem\models.py:257
+msgid ""
+"Set the default logging level. All messages at that level or above will be "
+"logged to the directory set below. If no level is set, logging will be "
+"disabled."
+msgstr ""
+
+#: .\supportSystem\models.py:263
+msgid "Logging Directory"
+msgstr ""
+
+#: .\supportSystem\models.py:267
+msgid ""
+"If logging is enabled, what directory should we use to store log files for "
+"this queue? The standard logging mechanims are used if no directory is set"
+msgstr ""
+
+#: .\supportSystem\models.py:278
+msgid "Default owner"
+msgstr ""
+
+#: .\supportSystem\models.py:288
+msgid "Queues"
+msgstr ""
+
+#: .\supportSystem\models.py:376
+msgid "Open"
+msgstr ""
+
+#: .\supportSystem\models.py:377
+msgid "Reopened"
+msgstr ""
+
+#: .\supportSystem\models.py:378
+#: .\supportSystem\templates\supportSystem\report_index.html:42
+#: .\supportSystem\templates\supportSystem\ticket.html:112
+#: .\supportSystem\templates\supportSystem\ticket.html:119
+#: .\supportSystem\templates\supportSystem\ticket.html:126
+msgid "Resolved"
+msgstr ""
+
+#: .\supportSystem\models.py:379
+#: .\supportSystem\templates\supportSystem\report_index.html:43
+#: .\supportSystem\templates\supportSystem\ticket.html:113
+#: .\supportSystem\templates\supportSystem\ticket.html:120
+#: .\supportSystem\templates\supportSystem\ticket.html:127
+#: .\supportSystem\templates\supportSystem\ticket.html:132
+msgid "Closed"
+msgstr ""
+
+#: .\supportSystem\models.py:380
+msgid "Duplicate"
+msgstr ""
+
+#: .\supportSystem\models.py:384
+msgid "1. Critical"
+msgstr ""
+
+#: .\supportSystem\models.py:385
+msgid "2. High"
+msgstr ""
+
+#: .\supportSystem\models.py:386
+msgid "3. Normal"
+msgstr ""
+
+#: .\supportSystem\models.py:387
+msgid "4. Low"
+msgstr ""
+
+#: .\supportSystem\models.py:388
+msgid "5. Very Low"
+msgstr ""
+
+#: .\supportSystem\models.py:403
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:16
+#: .\supportSystem\templates\supportSystem\ticket_list.html:46
+msgid "Created"
+msgstr ""
+
+#: .\supportSystem\models.py:405
+msgid "Date this ticket was first created"
+msgstr ""
+
+#: .\supportSystem\models.py:409
+msgid "Modified"
+msgstr ""
+
+#: .\supportSystem\models.py:411
+msgid "Date this ticket was most recently changed."
+msgstr ""
+
+#: .\supportSystem\models.py:418
+msgid ""
+"The submitter will receive an email for all public follow-ups left for this "
+"task."
+msgstr ""
+
+#: .\supportSystem\models.py:428
+msgid "Assigned to"
+msgstr ""
+
+#: .\supportSystem\models.py:432
+#: .\supportSystem\templates\supportSystem\include\tickets.html:17
+#: .\supportSystem\templates\supportSystem\ticket_list.html:45
+#: .\supportSystem\views\staff.py:522 .\supportSystem\views\staff.py:737
+msgid "Status"
+msgstr ""
+
+#: .\supportSystem\models.py:439
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:71
+#: .\supportSystem\views\staff.py:740
+msgid "Description"
+msgstr ""
+
+#: .\supportSystem\models.py:442
+msgid "The content of the customers query."
+msgstr ""
+
+#: .\supportSystem\models.py:446
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:76
+#: .\supportSystem\views\staff.py:741
+msgid "Resolution"
+msgstr ""
+
+#: .\supportSystem\models.py:449
+msgid "The resolution provided to the customer by our staff."
+msgstr ""
+
+#: .\supportSystem\models.py:457
+msgid "1 = Highest Priority, 5 = Low Priority"
+msgstr ""
+
+#: .\supportSystem\models.py:468
+msgid "Secret key needed for viewing/editing ticket by non-logged in users"
+msgstr ""
+
+#: .\supportSystem\models.py:475
+msgid "merged to"
+msgstr ""
+
+#: .\supportSystem\models.py:516
+#: .\supportSystem\templates\supportSystem\filters\owner.html:12
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:37
+#: .\supportSystem\views\feeds.py:85 .\supportSystem\views\feeds.py:110
+#: .\supportSystem\views\feeds.py:162 .\supportSystem\views\staff.py:483
+msgid "Unassigned"
+msgstr ""
+
+#: .\supportSystem\models.py:576 .\supportSystem\models.py:661
+#: .\supportSystem\models.py:980 .\supportSystem\models.py:1160
+#: .\supportSystem\templates\supportSystem\include\tickets.html:14
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:13
+#: .\supportSystem\templates\supportSystem\ticket_list.html:42
+msgid "Ticket"
+msgstr ""
+
+#: .\supportSystem\models.py:577
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:7
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:9
+#: .\supportSystem\templates\supportSystem\followup_edit.html:14
+#: .\supportSystem\templates\supportSystem\ticket.html:16
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:9
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:9
+#: .\supportSystem\templates\supportSystem\ticket_list.html:5
+#: .\supportSystem\templates\supportSystem\ticket_list.html:20
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:14
+msgid "Tickets"
+msgstr ""
+
+#: .\supportSystem\models.py:665 .\supportSystem\models.py:1075
+msgid "Date"
+msgstr ""
+
+#: .\supportSystem\models.py:677 .\supportSystem\views\staff.py:499
+msgid "Comment"
+msgstr ""
+
+#: .\supportSystem\models.py:683
+msgid "Public"
+msgstr ""
+
+#: .\supportSystem\models.py:687
+msgid ""
+"Public tickets are viewable by the submitter and all staff, but non-public "
+"tickets can only be seen by staff."
+msgstr ""
+
+#: .\supportSystem\models.py:697 .\supportSystem\models.py:989
+#: .\supportSystem\views\staff.py:1159 .\supportSystem\views\staff.py:1165
+#: .\supportSystem\views\staff.py:1172 .\supportSystem\views\staff.py:1178
+msgid "User"
+msgstr ""
+
+#: .\supportSystem\models.py:701
+msgid "New Status"
+msgstr ""
+
+#: .\supportSystem\models.py:705
+msgid "If the status was changed, what was it changed to?"
+msgstr ""
+
+#: .\supportSystem\models.py:709
+msgid "E-Mail ID"
+msgstr ""
+
+#: .\supportSystem\models.py:713
+msgid "The Message ID of the submitter's email."
+msgstr ""
+
+#: .\supportSystem\models.py:722 .\supportSystem\models.py:752
+#: .\supportSystem\models.py:869
+msgid "Follow-up"
+msgstr ""
+
+#: .\supportSystem\models.py:723
+#: .\supportSystem\templates\supportSystem\ticket.html:42
+msgid "Follow-ups"
+msgstr ""
+
+#: .\supportSystem\models.py:756 .\supportSystem\models.py:1166
+msgid "Field"
+msgstr ""
+
+#: .\supportSystem\models.py:761
+msgid "Old Value"
+msgstr ""
+
+#: .\supportSystem\models.py:767
+msgid "New Value"
+msgstr ""
+
+#: .\supportSystem\models.py:775
+msgid "removed"
+msgstr ""
+
+#: .\supportSystem\models.py:777
+#, python-format
+msgid "set to %s"
+msgstr ""
+
+#: .\supportSystem\models.py:779
+#, python-format
+msgid "changed from \"%(old_value)s\" to \"%(new_value)s\""
+msgstr ""
+
+#: .\supportSystem\models.py:786
+msgid "Ticket change"
+msgstr ""
+
+#: .\supportSystem\models.py:787
+msgid "Ticket changes"
+msgstr ""
+
+#: .\supportSystem\models.py:802
+msgid "File"
+msgstr ""
+
+#: .\supportSystem\models.py:809
+msgid "Filename"
+msgstr ""
+
+#: .\supportSystem\models.py:815
+msgid "MIME Type"
+msgstr ""
+
+#: .\supportSystem\models.py:821
+msgid "Size"
+msgstr ""
+
+#: .\supportSystem\models.py:823
+msgid "Size of this file in bytes"
+msgstr ""
+
+#: .\supportSystem\models.py:860
+msgid "Attachment"
+msgstr ""
+
+#: .\supportSystem\models.py:861
+#: .\supportSystem\templates\supportSystem\ticket.html:60
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:54
+msgid "Attachments"
+msgstr ""
+
+#: .\supportSystem\models.py:890
+msgid "Template Name"
+msgstr ""
+
+#: .\supportSystem\models.py:895
+msgid "Subject"
+msgstr ""
+
+#: .\supportSystem\models.py:897
+msgid ""
+"This will be prefixed with \"[ticket.ticket] ticket.title\". We recommend "
+"something simple such as \"(Updated\") or \"(Closed)\" - the same context is "
+"available as in plain_text, below."
+msgstr ""
+
+#: .\supportSystem\models.py:903
+msgid "Heading"
+msgstr ""
+
+#: .\supportSystem\models.py:905
+msgid ""
+"In HTML e-mails, this will be the heading at the top of the email - the same "
+"context is available as in plain_text, below."
+msgstr ""
+
+#: .\supportSystem\models.py:911
+msgid "Plain Text"
+msgstr ""
+
+#: .\supportSystem\models.py:912
+msgid ""
+"The context available to you includes {{ ticket }}, {{ queue }}, and "
+"depending on the time of the call: {{ resolution }} or {{ comment }}."
+msgstr ""
+
+#: .\supportSystem\models.py:918
+msgid "HTML"
+msgstr ""
+
+#: .\supportSystem\models.py:919
+msgid "The same context is available here as in plain_text, above."
+msgstr ""
+
+#: .\supportSystem\models.py:927
+msgid "Locale of this template."
+msgstr ""
+
+#: .\supportSystem\models.py:935
+msgid "e-mail template"
+msgstr ""
+
+#: .\supportSystem\models.py:936
+msgid "e-mail templates"
+msgstr ""
+
+#: .\supportSystem\models.py:988
+msgid "User who wishes to receive updates for this ticket."
+msgstr ""
+
+#: .\supportSystem\models.py:996
+msgid "For non-user followers, enter their e-mail address"
+msgstr ""
+
+#: .\supportSystem\models.py:1000
+msgid "Can View Ticket?"
+msgstr ""
+
+#: .\supportSystem\models.py:1003
+msgid "Can this CC login to view the ticket details?"
+msgstr ""
+
+#: .\supportSystem\models.py:1007
+msgid "Can Update Ticket?"
+msgstr ""
+
+#: .\supportSystem\models.py:1010
+msgid "Can this CC login and update the ticket?"
+msgstr ""
+
+#: .\supportSystem\models.py:1049
+msgid "Field Name"
+msgstr ""
+
+#: .\supportSystem\models.py:1050
+msgid ""
+"As used in the database and behind the scenes. Must be unique and consist of "
+"only lowercase letters with no punctuation."
+msgstr ""
+
+#: .\supportSystem\models.py:1056
+msgid "Label"
+msgstr ""
+
+#: .\supportSystem\models.py:1058
+msgid "The display label for this field"
+msgstr ""
+
+#: .\supportSystem\models.py:1062
+msgid "Help Text"
+msgstr ""
+
+#: .\supportSystem\models.py:1063
+msgid "Shown to the user when editing the ticket"
+msgstr ""
+
+#: .\supportSystem\models.py:1069
+msgid "Character (single line)"
+msgstr ""
+
+#: .\supportSystem\models.py:1070
+msgid "Text (multi-line)"
+msgstr ""
+
+#: .\supportSystem\models.py:1071
+msgid "Integer"
+msgstr ""
+
+#: .\supportSystem\models.py:1072
+msgid "Decimal"
+msgstr ""
+
+#: .\supportSystem\models.py:1073
+msgid "List"
+msgstr ""
+
+#: .\supportSystem\models.py:1074
+msgid "Boolean (checkbox yes/no)"
+msgstr ""
+
+#: .\supportSystem\models.py:1076
+msgid "Time"
+msgstr ""
+
+#: .\supportSystem\models.py:1077
+msgid "Date & Time"
+msgstr ""
+
+#: .\supportSystem\models.py:1079
+msgid "URL"
+msgstr ""
+
+#: .\supportSystem\models.py:1080
+msgid "IP Address"
+msgstr ""
+
+#: .\supportSystem\models.py:1085
+msgid "Data Type"
+msgstr ""
+
+#: .\supportSystem\models.py:1087
+msgid "Allows you to restrict the data entered into this field"
+msgstr ""
+
+#: .\supportSystem\models.py:1092
+msgid "Maximum Length (characters)"
+msgstr ""
+
+#: .\supportSystem\models.py:1098
+msgid "Decimal Places"
+msgstr ""
+
+#: .\supportSystem\models.py:1099
+msgid "Only used for decimal fields"
+msgstr ""
+
+#: .\supportSystem\models.py:1105
+msgid "Add empty first choice to List?"
+msgstr ""
+
+#: .\supportSystem\models.py:1107
+msgid ""
+"Only for List: adds an empty first entry to the choices list, which enforces "
+"that the user makes an active choice."
+msgstr ""
+
+#: .\supportSystem\models.py:1112
+msgid "List Values"
+msgstr ""
+
+#: .\supportSystem\models.py:1113
+msgid "For list fields only. Enter one option per line."
+msgstr ""
+
+#: .\supportSystem\models.py:1119
+msgid "Ordering"
+msgstr ""
+
+#: .\supportSystem\models.py:1120
+msgid "Lower numbers are displayed first; higher numbers are listed later"
+msgstr ""
+
+#: .\supportSystem\models.py:1134
+msgid "Required?"
+msgstr ""
+
+#: .\supportSystem\models.py:1135
+msgid "Does the user have to enter a value for this field?"
+msgstr ""
+
+#: .\supportSystem\models.py:1140
+msgid "Staff Only?"
+msgstr ""
+
+#: .\supportSystem\models.py:1141
+msgid ""
+"If this is ticked, then the public submission form will NOT show this field"
+msgstr ""
+
+#: .\supportSystem\models.py:1152
+msgid "Custom field"
+msgstr ""
+
+#: .\supportSystem\models.py:1153
+msgid "Custom fields"
+msgstr ""
+
+#: .\supportSystem\models.py:1176
+msgid "Ticket custom field value"
+msgstr ""
+
+#: .\supportSystem\models.py:1177
+msgid "Ticket custom field values"
+msgstr ""
+
+#: .\supportSystem\query.py:192
+msgid "No text"
+msgstr ""
+
+#: .\supportSystem\query.py:196
+msgid "View ticket"
+msgstr ""
+
+#: .\supportSystem\query.py:199
+msgid "Messages"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\base-head.html:12
+msgid "Support System"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:3
+#: .\supportSystem\templates\supportSystem\create_ticket.html:9
+msgid "Create Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:7
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:7
+msgid "Užklausos"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:18
+msgid "Submit a Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:21
+msgid "Unless otherwise stated, all fields are required."
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:22
+msgid "Please provide as descriptive a title and description as possible."
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:39
+msgid "Optional"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\create_ticket.html:53
+msgid "Submit Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:3
+msgid "Helpdesk Dashboard"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:7
+#: .\supportSystem\templates\supportSystem\navigation-sidebar.html:9
+msgid "Dashboard"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:9
+#: .\supportSystem\templates\supportSystem\report_index.html:9
+#: .\supportSystem\templates\supportSystem\ticket_list.html:23
+msgid "Overview"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:28
+msgid "All tickets created by you"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:29
+#: .\supportSystem\views\staff.py:75
+msgid "atrbcu_page"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:33
+msgid "Open tickets assigned to you"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:34
+msgid "You don't have assigned tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:35
+#: .\supportSystem\views\staff.py:73
+msgid "ut_page"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:41
+msgid "Closed and resolved tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\dashboard.html:42
+#: .\supportSystem\views\staff.py:74
+msgid "utcr_page"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:3
+msgid "Delete tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:12
+msgid "Delete Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:16
+msgid "Delete ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:18
+#, python-format
+msgid ""
+"Are you sure about deleting ticket? (<em>%(ticket_title)s</em>)? All "
+"information coresponding to ticket will be deleted"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:20
+#: .\supportSystem\templates\supportSystem\ticket_attachment_del.html:11
+msgid "Don't delete"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\delete_ticket.html:25
+#: .\supportSystem\templates\supportSystem\include\tickets.html:32
+#: .\supportSystem\templates\supportSystem\ticket_attachment_del.html:14
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:40
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:64
+#: .\supportSystem\templates\supportSystem\ticket_list.html:71
+msgid "Delete"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:5
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:14
+msgid "Edit Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:20
+msgid "Edit a Ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:22
+msgid "Error: "
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:28
+msgid "Save Changes"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\edit_ticket.html:30
+msgid "Discard changes"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\date.html:4
+msgid "Date (From)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\date.html:10
+msgid "Date (To)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\date.html:19
+msgid "Use YYYY-MM-DD date format, eg 2018-01-30"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\keywords.html:4
+msgid "Keywords"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\keywords.html:12
+msgid ""
+"Keywords are case-insensitive, and will be looked for pretty much everywhere "
+"possible. Prepend with 'queue:' or 'priority:' to search by queue or "
+"priority. You can also use the keyword OR to combine multiple searches."
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\owner.html:6
+msgid "Owner(s)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\owner.html:17
+msgid "(ME)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\owner.html:25
+msgid "Ctrl-Click to select multiple options"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\queue.html:6
+msgid "Queue(s)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\queue.html:18
+#: .\supportSystem\templates\supportSystem\filters\status.html:14
+msgid "Ctrl-click to select multiple options"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:5
+msgid "Sorting"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:10
+msgid "Sukurta"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:13
+msgid "Pavadinimas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:16
+msgid "Eilė"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:19
+msgid "Statusas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:22
+msgid "Prioritetas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:25
+msgid "Savininkas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:30
+msgid "Reverse"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\sorting.html:38
+msgid "Ordering applied to tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\filters\status.html:6
+msgid "Status(es)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:2
+msgid "Follow-Up edit"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:20
+msgid "Edit Follow-up"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:30
+msgid "Edit Follow-Up"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:37
+msgid "Assign Ticket:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:39
+msgid "Title:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\followup_edit.html:41
+msgid "Comment:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\alert_form_errors.html:4
+msgid "This form has errors"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\priority.html:11
+msgid "Critical priority tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\priority.html:24
+msgid "High priority tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\priority.html:37
+msgid "Medium priority tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\status.html:11
+msgid "Opened Tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\status.html:24
+msgid "Resolved Tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\status.html:37
+msgid "Closed Tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\tickets.html:7
+msgid "Your tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\tickets.html:18
+#: .\supportSystem\views\staff.py:501
+msgid "Updated"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\tickets.html:19
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:17
+msgid "Actions"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\tickets.html:31
+msgid "View"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\tickets.html:37
+msgid "No waiting tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:6
+msgid "Unassigned tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:29
+msgid "Take"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:30
+msgid "Trinti"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\include\unassigned.html:34
+msgid "No unassigned tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-header.html:14
+#: .\supportSystem\templates\supportSystem\navigation-header.html:18
+msgid "Search"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-header.html:14
+msgid "Enter keyword or ticket ID"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-header.html:31
+msgid "Language"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-header.html:55
+#: .\supportSystem\templates\supportSystem\navigation-header.html:63
+msgid "Sign out"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-header.html:65
+msgid "Prisijungti"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-sidebar.html:15
+msgid "All tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\navigation-sidebar.html:25
+msgid "Reports"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:3
+#: .\supportSystem\templates\supportSystem\report_index.html:7
+#: .\supportSystem\templates\supportSystem\report_index.html:13
+msgid "Reports and Statistic"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:16
+msgid "There are no tickets registered, unable to create reports"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:22
+msgid "Statistic"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:29
+msgid "Average days until ticket is closed:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:41
+#: .\supportSystem\templates\supportSystem\ticket.html:111
+#: .\supportSystem\templates\supportSystem\ticket.html:118
+#: .\supportSystem\templates\supportSystem\ticket.html:125
+#: .\supportSystem\templates\supportSystem\ticket.html:136
+msgid "Opened"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:56
+msgid "There are no unassigned tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:70
+msgid "Generate Report"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:74
+msgid "Users reports"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:76
+#: .\supportSystem\templates\supportSystem\report_index.html:84
+msgid "By priority"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:77
+msgid "By queue"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:78
+#: .\supportSystem\templates\supportSystem\report_index.html:85
+msgid "By status"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:79
+#: .\supportSystem\templates\supportSystem\report_index.html:86
+msgid "By month"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:82
+msgid "Queues reports"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_index.html:87
+msgid "By days until ticket is closed"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\report_output.html:4
+#: .\supportSystem\templates\supportSystem\report_output.html:12
+#: .\supportSystem\templates\supportSystem\report_output.html:18
+msgid "Reports &amp; Statistic"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:7
+msgid "View ticket information"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:34
+msgid "This ticket was merged to other ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:49
+msgid "Private"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:57
+#, python-format
+msgid "Changed %(field)s from %(old_value)s to %(new_value)s."
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:95
+msgid "Respond to this ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:104
+msgid "Comment/answer"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:107
+msgid "New status"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:131
+msgid "Opneed"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:144
+msgid "Is this answer to ticket??"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:146
+msgid "Yes, it is answer"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:147
+msgid "Answers are visible to customers"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:152
+msgid "Edit Follow-up &raquo;"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:161
+#: .\supportSystem\templates\supportSystem\ticket_list.html:47
+#: .\supportSystem\views\staff.py:531 .\supportSystem\views\staff.py:739
+msgid "Owner"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:162
+msgid "Delete assignment"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:172
+msgid "Add attachments &raquo;"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:177
+msgid "Attach file"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:180
+msgid "Attach other file"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:183
+msgid "There are no files attached"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:192
+msgid "Update ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket.html:239
+msgid "No files selected."
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_attachment_del.html:3
+msgid "Delete attachment"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_attachment_del.html:5
+#, python-format
+msgid ""
+"\n"
+"<h2>Delete Ticket Attachment</h2>\n"
+"\n"
+"<p>Are you shure about deleting the attachment <i>%(filename)s</i> from this "
+"ticket?</p>\n"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:5
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:21
+msgid "Pridėti CC"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:15
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:14
+msgid "CC Settings"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:17
+msgid "Add CC"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:26
+msgid ""
+"Norint automatiškai siųsti pranešimus apie užklausą pridėkite vartotoją arba "
+"įrašykite el. pašto adresą"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:33
+msgid "E. paštas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:39
+msgid "Vartotojas"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:52
+msgid "Pridėti el. paštą"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:69
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:93
+msgid "Išsaugoti"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:71
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:95
+msgid "Atšaukti"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_add.html:76
+msgid "Pridėti vartotoją"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:3
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:15
+msgid "Ištrinti CC"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:13
+msgid "CC nustatymai"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:18
+#, python-format
+msgid ""
+"\n"
+"<h2>Delete Ticket CC</h2>\n"
+"\n"
+"<p>Are you sure you wish to delete this email address (<em>"
+"%(email_address)s</em>) from the CC list for this ticket? They will stop "
+"receiving updates.</p>\n"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:25
+msgid "Don't Delete"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_del.html:28
+msgid "Yes I Understand - Delete"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:5
+msgid "Ticket CC Settings"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:17
+#, python-format
+msgid ""
+"\n"
+"<h2>Ticket CC Settings</h2>\n"
+"\n"
+"<p>The following people will receive an e-mail whenever <em><a href='../'>"
+"%(ticket_title)s</a></em> is updated. Some people can also view or edit the "
+"ticket via the public ticket views.</p>\n"
+"\n"
+"<p>You can add a new recipient to the list or delete any of the items below "
+"as required.</p>"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:28
+msgid "Ticket CC List"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:32
+msgid "Add an Email or Helpdesk User"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:37
+msgid "E-Mail Address or Helpdesk User"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:38
+msgid "View?"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:39
+msgid "Update?"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_cc_list.html:86
+#, python-format
+msgid "Return to <em>%(ticket_title)s</em>"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:14
+#, python-format
+msgid "Queue: %(queue)s"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:16
+msgid "Edit"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:32
+msgid "Registered"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:36
+msgid "Assigned"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:38
+msgid "Assign ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:41
+msgid "Submitted"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:44
+msgid "Search tickets registered by: "
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_desc_table.html:76
+msgid "Take and close"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:48
+msgid "Sumbitter"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:54
+msgid "Select:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:57
+msgid "All"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:68
+msgid "With selected tickets:"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:70
+msgid "Assign to you"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:73
+msgid "Close"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:74
+msgid "Close (don't send email)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:75
+msgid "Close (send email)"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:77
+msgid "Assign"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:78
+msgid "Delete assigments"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:86
+msgid "Go"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_list.html:126
+msgid "No tickets found"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:5
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:16
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:24
+msgid "Merge Tickets"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:34
+msgid "OK"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:43
+msgid ""
+"\n"
+"                        Choose the ticket which will be conserved and then, "
+"for each information, you can decide to use\n"
+"                        a data from another ticket to merge. I you don't "
+"select a data on a row, <b>the information\n"
+"                        from the main ticket will stay unchanged</b>.\n"
+"                    "
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:50
+msgid ""
+"\n"
+"                        The  <b>follow-ups</b> and <b>attachments</b> from "
+"the merged tickets will be moved to\n"
+"                        the main ticket.<br>\n"
+"                        <b>Involved users</b> (the ticket submitter and "
+"emails in CC) will also be added in the\n"
+"                        main ticket CC list.<br>\n"
+"                        However, ticket dependencies from the merged ticket "
+"won't be applied to the main ticket.\n"
+"                    "
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:70
+msgid "Fields"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:77
+msgid "Open ticket"
+msgstr ""
+
+#: .\supportSystem\templates\supportSystem\ticket_merge.html:97
+msgid "Validate"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:29
+#, python-format
+msgid "Helpdesk: Open Tickets in queue %(queue)s for %(username)s"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:34
+#, python-format
+msgid "Helpdesk: Open Tickets for %(username)s"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:40
+#, python-format
+msgid "Open and Reopened Tickets in queue %(queue)s for %(username)s"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:45
+#, python-format
+msgid "Open and Reopened Tickets for %(username)s"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:92
+msgid "Helpdesk: Unassigned Tickets"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:93
+msgid "Unassigned Open and Reopened tickets"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:117
+msgid "Helpdesk: Recent Followups"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:118
+msgid ""
+"Recent FollowUps, such as e-mail replies, comments, attachments and "
+"resolutions"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:133
+#, python-format
+msgid "Helpdesk: Open Tickets in queue %(queue)s"
+msgstr ""
+
+#: .\supportSystem\views\feeds.py:138
+#, python-format
+msgid "Open and Reopened Tickets in queue %(queue)s"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:289
+msgid "Accepted resolution and closed ticket"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:373
+#, python-format
+msgid ""
+"When you add somebody on Cc, you must provide either a User or a valid "
+"email. Email: %s"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:476
+#, python-format
+msgid "Assigned to %(username)s"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:666
+#, python-format
+msgid "Assigned to %(username)s in bulk update"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:677
+msgid "Unassigned in bulk update"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:687 .\supportSystem\views\staff.py:697
+msgid "Closed in bulk update"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:736
+msgid "Created date"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:738
+msgid "Submitter email"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:758
+msgid "Not defined"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:781
+msgid "Please choose a ticket in which the others will be merged into."
+msgstr ""
+
+#: .\supportSystem\views\staff.py:826
+#, python-format
+msgid "[Merged from #%(id)d] %(title)s"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:965
+msgid ""
+"<p><strong>Note:</strong> Your keyword search is case sensitive because of "
+"your database. This means the search will <strong>not</strong> be accurate. "
+"By switching to a different database system you will gain better searching! "
+"For more information, read the <a href=\"http://docs.djangoproject.com/en/"
+"dev/ref/databases/#sqlite-string-matching\">Django Documentation on string "
+"matching in SQLite</a>."
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1158
+msgid "User by Priority"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1164
+msgid "User by Queue"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1171
+msgid "User by Status"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1177
+msgid "User by Month"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1183
+msgid "Queue by Priority"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1189
+msgid "Queue by Status"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1195
+msgid "Queue by Month"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1201
+msgid "Days until ticket closed by Month"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1345
+msgid "Impossible to add twice the same user"
+msgstr ""
+
+#: .\supportSystem\views\staff.py:1347
+msgid "Impossible to add twice the same email address"
+msgstr ""
